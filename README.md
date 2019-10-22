@@ -1,0 +1,3 @@
+# Intermediate_Python
+python learn
+在学习python过程中和使用过程中一些使用理解不透彻的总结
