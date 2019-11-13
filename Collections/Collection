@@ -1,0 +1,20 @@
+容器 Collections
+容器(Collections)
+Python附带⼀个模块，它包含许多容器数据类型，名字叫作collections。我们将讨论 它的作⽤和⽤法。 我们将讨论的是：
+ defaultdict
+ counter 计数器
+ deque deque提供了⼀个双端队列，你可以从头/尾两端添加或删除元素
+ namedtuple
+ enum.Enum (包含在Python 3.4以上)
+
+
+
+ 一：defaultdict
+我个⼈使⽤defaultdict较多，与dict类型不同，你不需要检查key是否存在，所以我 们能这样做：
+ from collections import defaultdict
+ colours = ( ('Yasoob', 'Yellow'), ('Ali', 'Blue'), ('Arham', 'Green'), ('Ali', 'Black'), ('Yasoob', 'Red'), ('Ahmed', 'Silver'), )
+ favourite_colours = defaultdict(list)
+ for name, colour in colours:
+    favourite_colours[name].append(colour)
+ print(favourite_colours)
+   运⾏输出 # defaultdict(<type 'list'>, # {'Arham': ['Green'], # 'Yasoob': ['Yellow', 'Red'], # 'Ahmed': ['Silver'], # 'Ali': ['Blue', 'Black'] # })

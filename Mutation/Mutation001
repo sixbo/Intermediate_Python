@@ -1,0 +1,35 @@
+'''foo =['hi']
+print(foo)
+
+bar=foo
+bar +=['bye']
+print(foo)'''
+'''
+['hi']
+['hi', 'bye']
+
+Process finished with exit code 0
+变量bar和foo指向一致说一第6行输出['hi', 'bye']
+这是对象可变性(mutability)在作怪。每当你将⼀个变量赋值为另⼀个可 变类型的变量时，对这个数据的任意改动会同时反映到这两个变量上去。新变量只不过是 ⽼变量的⼀个别名⽽已。这个情况只是针对可变数据类型
+'''
+
+def add_to(num,targe=[]):
+    targe.append(num)
+    return targe
+x=add_to(1)
+
+print(x)
+x=add_to(2)
+
+print(x)
+
+x=add_to(3)
+
+print(x)
+
+'''
+[1]
+[1, 2]
+[1, 2, 3]
+是列表的可变性在作怪。在Python中当函数被定义时，默认 参数只会运算⼀次，⽽不是每次被调⽤时都会重新运算。你应该永远不要定义可变类型的 默认参数，除⾮你知道你正在做什么
+'''
